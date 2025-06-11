@@ -1,0 +1,32 @@
+{
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/devsecops-project-ecs-execution-role-dev",
+  "containerDefinitions": [
+    {
+      "name": "devsecops-project-container-dev",
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/devsecops-project-dev",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512",
+  "family": "devsecops-project-task-dev"
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSecOps Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DevSecOps Project</h1>
+        <p>Deployed with AWS ECS, CodePipeline, and Terraform</p>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h2>Welcome to our Application</h2>
+            <p>This application was deployed using a complete CI/CD pipeline with security best practices.</p>
+            <p>Infrastructure components:</p>
+            <ul>
+                <li>VPC with public and private subnets</li>
+                <li>ECS Fargate for container orchestration</li>
+                <li>RDS MySQL database</li>
+                <li>CodePipeline for continuous delivery</li>
+                <li>Security groups and IAM roles with least privilege</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
