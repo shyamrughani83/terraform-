@@ -21,4 +21,6 @@ db_instance_class = "db.t3.micro"
 # CodePipeline
 repository_name = "devsecops-repo"
 branch_name = "main"
-github_repository = "shyamrughani83/portfolio-v1"
+# Static Website
+static_github_repository = "shyamrughani83/static-website"
+static_branch_name = "main"

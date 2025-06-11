@@ -98,3 +98,16 @@ variable "github_repository" {
   type        = string
   default     = "shyamrughani83/portfolio-v1"
 }
+
+# Static Website Variables
+variable "static_github_repository" {
+  description = "GitHub repository for static website in the format 'owner/repo'"
+  type        = string
+  default     = "shyamrughani83/static-website"
+}
+
+variable "static_branch_name" {
+  description = "Branch name to trigger the static website pipeline"
+  type        = string
+  default     = "main"
+}

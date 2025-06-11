@@ -75,3 +75,13 @@ module "codepipeline" {
   ecs_cluster_name  = module.ecs.cluster_name
   ecs_service_name  = module.ecs.service_name
 }
+
+# CloudFront Module
+module "cloudfront" {
+  source = "./modules/cloudfront"
+  
+  project_name           = var.project_name
+  environment            = var.environment
+  static_github_repository = var.static_github_repository
+  static_branch_name     = var.static_branch_name
+}
