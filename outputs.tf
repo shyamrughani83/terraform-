@@ -17,12 +17,12 @@ output "private_subnet_ids" {
 # EC2 Outputs
 output "ec2_instance_id" {
   description = "ID of the EC2 instance"
-  value       = module.ec2.instance_id
+  value       = module.ec2.instance_ids
 }
 
 output "ec2_public_ip" {
   description = "Public IP of the EC2 instance"
-  value       = module.ec2.public_ip
+  value       = module.ec2.instance_public_ips
 }
 
 # ECS Outputs
@@ -44,7 +44,7 @@ output "ecr_repository_url" {
 # RDS Outputs
 output "rds_endpoint" {
   description = "Endpoint of the RDS instance"
-  value       = module.rds.endpoint
+  value       = module.rds.db_endpoint
 }
 
 # CodePipeline Outputs

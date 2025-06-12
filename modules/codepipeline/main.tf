@@ -296,7 +296,6 @@ resource "aws_codepipeline" "main" {
 
 # Create a sample buildspec.yml file in the project directory
 resource "local_file" "buildspec" {
-  filename = "${path.root}/buildspec.yml"
   content = <<-EOT
 version: 0.2
 
@@ -318,18 +317,10 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push $${REPOSITORY_URI}:latest
+      - docker push $${REPOSITORY_URI}:$${IMAGE_TAG}
       - echo Writing image definitions file...
-      - echo '[{"name":"${var.project_name}-container-${var.environment}","imageUri":"'$REPOSITORY_URI:$IMAGE_TAG'"}]' > imagedefinitions.json
-artifacts:
-  files:
-    - imagedefinitions.json
-  EOT
-}
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - echo '[{"name":"${var.project_name}-container-${var.environment}","imageUri":"'$REPOSITORY_URI:$IMAGE_TAG'"}]' > imagedefinitions.json
+      - echo "[{\"name\":\"${var.project_name}-container-${var.environment}\",\"imageUri\":\"$${REPOSITORY_URI}:$${IMAGE_TAG}\"}]" > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
